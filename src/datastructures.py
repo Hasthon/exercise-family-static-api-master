@@ -27,7 +27,7 @@ class FamilyStructure:
             "lucky_numbers": [10, 14, 3]   
         },
         {
-            "id": self._generateId(),
+            "id":self._generateId(),
             "first_name": "Jimmy",
             "last_name":self.last_name,
             "age": "5 years old",
@@ -39,7 +39,7 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        member["id"]=self._generateId() 
+        if member['id'] is None: member["id"]=self._generateId()  
         member["last_name"] = self.last_name
         self._members.append(member)
         return member
